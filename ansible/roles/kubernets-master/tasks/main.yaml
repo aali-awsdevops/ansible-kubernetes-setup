@@ -51,7 +51,7 @@
     content: "{{ join_command.stdout }} --cri-socket={{ containerd_socket }}\n"
     dest: /tmp/kubeadm-join.sh
     mode: "0700"
-  delegate_to: localhost
+  #delegate_to: localhost
   become: false
   no_log: true
   
