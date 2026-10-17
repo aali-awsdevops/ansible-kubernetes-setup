@@ -35,11 +35,11 @@ calico_version: "v3.33.0"
 
 # Kubernetes API endpoint
 # Master's private IP for internal VPC communication
-kubernetes_api_endpoint: "172.31.32.136:6443"
-private_ip: "172.31.32.136"
+kubernetes_api_endpoint: "10.0.3.10:6443"
+private_ip: "10.0.3.10"
 # API server certificate SANs
 kubernetes_api_cert_sans:
-  - "172.31.32.136"
+  - "10.0.3.10"
 
 # Ubuntu SSH user
 ansible_user: ubuntu
