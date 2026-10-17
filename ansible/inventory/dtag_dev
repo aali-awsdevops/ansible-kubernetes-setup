@@ -1,0 +1,19 @@
+# Control plane
+[master]
+master ansible_host=10.0.3.10
+
+# Worker nodes
+[slave]
+slave1 ansible_host=10.0.3.11
+slave2 ansible_host=10.0.3.12
+slave3 ansible_host=10.0.3.13
+
+# Parent group containing all Kubernetes nodes
+[kubernetes:children]
+master
+slave
+
+# Common SSH settings
+[kubernetes:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=/home/ubuntu/ansible/dtag-dev.pem

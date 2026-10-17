@@ -1,0 +1,7 @@
+- name: Install Containerd
+  become: yes
+  hosts: kubernetes
+  vars_files:
+    - ../vars/main.yaml
+  roles:
+    - containerd

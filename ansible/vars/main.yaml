@@ -1,0 +1,45 @@
+
+---
+# Common packages
+common_packages:
+  - curl
+  - zip
+  - ca-certificates
+  - wget
+  - apt-transport-https
+  - gpg
+
+# Kubernetes packages
+kubernetes_packages:
+  - kubeadm
+  - kubelet
+  - kubectl
+
+# Kubernetes version repository (minor version)
+kubernetes_version: "1.37"
+
+# Exact package versions are not pinned here.
+# Use explicit package versions if exact patch consistency is required.
+
+# Pod network CIDR
+pod_network_cidr: "192.168.0.0/16"
+
+# Kubernetes service network CIDR
+service_network_cidr: "10.96.0.0/12"
+
+# Container runtime
+containerd_socket: "unix:///var/run/containerd/containerd.sock"
+
+# Calico version
+calico_version: "v3.33.0"
+
+# Kubernetes API endpoint
+# Master's private IP for internal VPC communication
+kubernetes_api_endpoint: "172.31.32.136:6443"
+private_ip: "172.31.32.136"
+# API server certificate SANs
+kubernetes_api_cert_sans:
+  - "172.31.32.136"
+
+# Ubuntu SSH user
+ansible_user: ubuntu

@@ -1,0 +1,22 @@
+
+---
+- name: Copy join command to worker
+  ansible.builtin.copy:
+    src: /tmp/kubeadm-join.sh
+    dest: /tmp/kubeadm-join.sh
+    owner: root
+    group: root
+    mode: "0700"
+  no_log: true
+
+- name: Execute Kubernetes join command
+  ansible.builtin.command:
+    cmd: bash /tmp/kubeadm-join.sh
+    creates: /etc/kubernetes/kubelet.conf
+  no_log: true
+
+- name: Delete join command from worker
+  ansible.builtin.file:
+    path: /tmp/kubeadm-join.sh
+    state: absent
+  no_log: true

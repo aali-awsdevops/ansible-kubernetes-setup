@@ -1,0 +1,7 @@
+- name: update and install required packages
+  hosts: kubernetes
+  become: yes
+  vars_files:
+    - ../vars/main.yaml
+  roles:
+    - linux
